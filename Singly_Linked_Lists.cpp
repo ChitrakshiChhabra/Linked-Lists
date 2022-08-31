@@ -107,6 +107,64 @@ void insert_at_position(int position, int node_data)
 
 }
 
+// Function to delete a node in the beginning of the linked list.
+
+void delete_in_beginning()
+{
+    Node *n = first -> next;
+    first = n;
+
+    cout << "Element successfully deleted in the beginning of the Linked List." << endl;
+}
+
+void delete_at_the_end()
+{
+    Node *p = first;
+    while(true)
+    {
+        Node *r = p -> next;
+
+        if (r -> next == NULL)
+            break;
+        else
+            p = p -> next;
+    }
+
+    p -> next = NULL;
+    last = p;
+
+    cout << "Element successfully deleted at the end of the Linked List." << endl;
+}
+
+// Function to delete a node at a certain position in the Linked List.
+
+void delete_at_position(int position)
+{
+    Node *before, *after;
+    int counter = 1;
+    before = first;
+
+    while(true)
+    {   
+        if (counter + 1 == position)
+        {
+            Node *n = before -> next;
+            after = n -> next;
+            before -> next = after;
+            break;
+        }
+        else
+        {
+            before = before -> next;
+            counter+=1;
+
+        }
+        
+    }
+
+    cout << "Element successfully deleted at position " << position << " of Linked List." << endl;
+}
+
 
 int main()
 {
@@ -120,6 +178,12 @@ int main()
     insert_in_the_end(6);
     traversal();
     insert_at_position(3, -1);
+    traversal();
+    delete_in_beginning();
+    traversal();
+    delete_at_the_end();
+    traversal();
+    delete_at_position(3);
     traversal();
 
     return 0;
