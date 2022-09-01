@@ -165,6 +165,29 @@ void delete_at_position(int position)
     cout << "Element successfully deleted at position " << position << " of Linked List." << endl;
 }
 
+// Function to count the number of nodes in a linked list
+
+void number_of_nodes()
+{
+    Node *n = first;
+    int count = 0;
+
+    while(true)
+    {
+        count+=1;
+        if(n -> next == NULL)
+            break;
+        else
+            n = n -> next;
+    }
+
+    cout << "Number of nodes in the Linked List are " << count << "." << endl;
+}
+
+
+
+
+
 
 int main()
 {
@@ -185,6 +208,7 @@ int main()
     traversal();
     delete_at_position(3);
     traversal();
+    number_of_nodes();
 
     return 0;
     
