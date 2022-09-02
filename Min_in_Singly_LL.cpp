@@ -38,6 +38,8 @@ int min_iterative(Node *n = first)
     return min;
 }
 
+
+
 // Function to find the minimum of a Linked List (Tail Recursive Sol)
 int min_tail_recursion(Node *n = first, int min = first -> data)
 {
