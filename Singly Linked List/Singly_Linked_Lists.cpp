@@ -15,8 +15,7 @@ struct Node
     int data;
     Node *next = NULL;
 
-} *first = new Node,
-  *last;
+} *first = new Node, *last;
 
 // Function to create the linked list.
 void creation(int values[], int number)
