@@ -126,8 +126,9 @@ void insert_at_position(int position, int node_data)
 
 void delete_in_beginning()
 {
-    Node *n = first->next;
-    first = n;
+    Node *n = first;
+    first = first -> next;
+    delete n;
 
     cout << "Element successfully deleted in the beginning of the Linked List." << endl;
 }
@@ -135,19 +136,20 @@ void delete_in_beginning()
 void delete_at_the_end()
 {
     Node *p = first;
+    Node *q;
     while (true)
     {
-        Node *r = p->next;
-
-        if (r->next == NULL)
+        if (p->next->next == NULL)
+        {
+            q = p -> next;
             break;
+        }
         else
             p = p->next;
     }
-
-    p->next = NULL;
     last = p;
-
+    p -> next = NULL;
+    delete(q);
     cout << "Element successfully deleted at the end of the Linked List." << endl;
 }
 
@@ -155,22 +157,22 @@ void delete_at_the_end()
 
 void delete_at_position(int position)
 {
-    Node *before, *after;
+    Node *p, *q;
     int counter = 1;
-    before = first;
+    p = first;
 
     while (true)
     {
         if (counter + 1 == position)
         {
-            Node *n = before->next;
-            after = n->next;
-            before->next = after;
+            q = p -> next;
+            p -> next = q -> next;
+            delete(q);
             break;
         }
         else
         {
-            before = before->next;
+            p = p ->next;
             counter += 1;
         }
     }
