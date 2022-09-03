@@ -82,10 +82,8 @@ void insert_in_beginning(int node_data)
 {
     Node *new_first = new Node;
     new_first->data = node_data;
-
-    Node *old_first = first;
+    new_first -> next = first;
     first = new_first;
-    first->next = old_first;
 
     cout << "Element successfully inserted in the beginning of the Linked List." << endl;
 }
@@ -95,10 +93,8 @@ void insert_in_the_end(int node_data)
 {
     Node *new_end = new Node;
     new_end->data = node_data;
-
-    Node *old_end = last;
+    last -> next = new_end;
     last = new_end;
-    old_end->next = last;
 
     cout << "Element successfully inserted at the end of the Linked List." << endl;
 }
@@ -121,13 +117,8 @@ void insert_at_position(int position, int node_data)
             counter += 1;
         }
     }
-
-    Node *later;
-    later = pos->next;
-
-    pos->next = new_between;
-    new_between->next = later;
-
+    new_between -> next = pos -> next;
+    pos -> next = new_between;
     cout << "Element successfully inserted at position " << position << " in the Linked List." << endl;
 }
 
