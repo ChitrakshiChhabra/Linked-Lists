@@ -57,6 +57,12 @@ void sorted_insertion(int key)
     q = NULL;
     t = new Node;
     t -> data = key;
+    // Creation of Sorted Linked List if initially there were no nodes.
+     if (first == NULL)
+    {
+        first = t;
+        return;
+    }
     // if key is smaller than the first node then insertion will be done in the beginning.
     if (key < first -> data)
     {
@@ -86,6 +92,12 @@ void sorted(int key)
     p = first;
     t = new Node;
     t -> data = key;
+    // Creation of Sorted Linked List if initially there were no nodes.
+    if (first == NULL)
+    {
+        first = t;
+        return;
+    }
     // Insertion in beginning.
     if (key < first -> data)
     {
@@ -120,8 +132,8 @@ int main()
     int values[] = {3,7,13,19,22,34,57};
     int number = 7;
     
-    creation(values, number);
-    traversal();
+    // creation(values, number);
+    // traversal();
     sorted_insertion(2);
     traversal();
     sorted(1);
