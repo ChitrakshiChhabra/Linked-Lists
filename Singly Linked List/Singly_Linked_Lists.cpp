@@ -1,5 +1,14 @@
 #include <iostream>
 using namespace std;
+// This code focuses on the -
+// Creation of Nodes using  C++ Structures.
+// Creation of Linked Lists by taking array and array size as the input. Array contains all the elements of Linked List.
+// Traversal of Linked List.(Recursive + Iterative)
+// Insertion of new Nodes from Linked List (Beginning, End, Position).
+// Deletion of new Node from Linked List (Beginning, End, Position).
+// Counting the number of nodes in Linked List.
+// Recursive sum of all elements in Linked List.
+
 // Creation of Node in a Linked List
 struct Node
 {

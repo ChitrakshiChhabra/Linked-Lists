@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// Code for finding the maximum element in a Singly Linked List.
 struct Node
 {
     int data;

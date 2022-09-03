@@ -1,7 +1,10 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
+// Leetcode Question 1 (Easy)
+// Converting Binary in Linked List to Decimal.
+// Sample [1,0,1] will return 5.
+// [1,0,1] should be viewed as 1 -> 0 -> 1
 struct Node
 {
     int data;
