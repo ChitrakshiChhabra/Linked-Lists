@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-
+// Code for implementing Searching in Linked Lists.
+// Binary Search is not possible with Linked Lists as we cannot traverse from the middle unlike arrays.
 struct Node
 {
     int data;
@@ -72,7 +73,7 @@ Node *search_recursive(int key, Node*n = first)
     
     search_recursive(key, n -> next);
 }
-
+// Function to make the key as the first node so that Linear Search becomes more efficient.
 void make_head(int key, Node *p = first)
 {
     Node *q = NULL;
