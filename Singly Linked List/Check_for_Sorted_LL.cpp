@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+// This code is for checking whether a Linked List is sorted or not.
 struct Node
 {
     int data;

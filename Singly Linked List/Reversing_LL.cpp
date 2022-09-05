@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
-
+// This code is used for reversing a Linked List.
+// Majourly we can reverse a Linked List by the help of 2 methods
+// Reversing just the data of the Linked List.
+// Reversing the links of nodes in the Linked List. (Better Method)
 struct Node
 {
     int data;
