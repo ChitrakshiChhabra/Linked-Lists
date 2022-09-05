@@ -9,7 +9,7 @@ struct Node
 {
     int data;
     Node *next = NULL;
-}*first = NULL, *second = NULL;
+}*first = NULL, *second = NULL, *third = NULL;
 
 void creation1(int values[], int number)
 {
@@ -26,7 +26,7 @@ void creation1(int values[], int number)
         previous_node = current_node;
     }
 
-    cout << "Fisrt Linked List Successfully Created." << endl;
+    cout << "First Linked List Successfully Created." << endl;
 }
 void creation2(int values[], int number)
 {
@@ -63,16 +63,17 @@ void traversal(Node *n)
     }
 }
 
-Node *concatenate(Node *p = first)
+Node *concatenate(Node *p, Node *q)
 {
+    third = p;
     while(p -> next != NULL)
     {
         p = p -> next;
     }
 
-    p -> next = second;
-    second = NULL;
-    return first;
+    p -> next = q;
+    q = NULL;
+    return third;
 }
 
 int main()
@@ -84,7 +85,8 @@ int main()
     traversal(first);
     traversal(second);
     cout << "Concatenating the two Linked Lists into one -- ";
-    traversal(concatenate());
+    traversal(concatenate(second, first));
+    
 
     return 0;
 }
