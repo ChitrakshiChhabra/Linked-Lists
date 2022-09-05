@@ -1,10 +1,6 @@
 #include <iostream>
 using namespace std;
-// This code is for performing the concatenation of 2 Linked Lists.
-// eg --> 
-// List 1   10 -> 30 -> 50 -> 70 -> NULL
-// List 2   20 -> 40 -> 60 -> 80 -> NULL
-// Concatenated result will be  10 -> 30 -> 50 -> 70 -> 20 -> 40 -> 60 -> 80 -> NULL
+
 struct Node
 {
     int data;
@@ -63,18 +59,6 @@ void traversal(Node *n)
     }
 }
 
-Node *concatenate(Node *p = first)
-{
-    while(p -> next != NULL)
-    {
-        p = p -> next;
-    }
-
-    p -> next = second;
-    second = NULL;
-    return first;
-}
-
 int main()
 {
     int values1[] = {2,8,10,15};
@@ -83,8 +67,6 @@ int main()
     creation2(values2, 4);
     traversal(first);
     traversal(second);
-    cout << "Concatenating the two Linked Lists into one -- ";
-    traversal(concatenate());
 
     return 0;
 }
