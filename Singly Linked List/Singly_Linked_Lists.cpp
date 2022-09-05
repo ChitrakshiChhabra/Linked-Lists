@@ -76,6 +76,15 @@ void recursive_display(Node *n = first)
     }
 }
 
+void reverse_display(Node *p = first)
+{
+    if (p == NULL)
+        return;
+    
+    reverse_display(p -> next);
+    cout << p -> data << " ";
+}
+
 // Function to insert a node/element in the beginning of the linked list.
 void insert_in_beginning(int node_data)
 {
@@ -235,6 +244,7 @@ int main()
     number_of_nodes();
     recursive_display();
     recursive_sum();
+    reverse_display();
 
     return 0;
 }
